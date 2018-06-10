@@ -34,7 +34,7 @@ client.on('ready', () => {
         client.user.setActivity(status[rstatus], { type: 'WATCHING' });
     }; setInterval(randomStatus, 30000)
 
-    console.log(readyLog + 'Bot has successfully deploy!');
+    console.log(readyLog + 'Bot has been successfully deployed!');
 });
 
 // Invite status log
