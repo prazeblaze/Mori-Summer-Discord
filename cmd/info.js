@@ -28,7 +28,7 @@ exports.run = (client, message, args, tools) => {
         color: 15554891,
 
         footer: {
-            text: `Powered By ${owner} | 1 Shards`
+            text: `Mori Summer Project | 1 Shards`
         },
         author: {
             name: "Mori Summer | A Discord Bot",

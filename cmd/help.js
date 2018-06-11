@@ -27,7 +27,7 @@ exports.run = (client, message, args, tools) => {
 
             footer: {
                 icon_url: "https://cdn.discordapp.com/avatars/451394160440770601/795d0d2e2e297a3aab3a3b3f9f994617.png",
-                text: "Powered by SeriousMunn"
+                text: "Mori Summer Project"
             },
             thumbnail: {
                 url: "https://cdn.discordapp.com/avatars/451394160440770601/795d0d2e2e297a3aab3a3b3f9f994617.png"
