@@ -16,7 +16,7 @@ exports.run = (client, message, args, tools) => {
       // semisal lu enter disini, hasilnya juga bakal keenter
       // walau lu ga pake "\n" dibelakang teksnya
       description: `Click the \`Command List\` above here for more information about the entire commands.
-                    \nOr, type ${prefix}help [command_name] for more information.
+                    \nOr, type \`${prefix}help [command_name]\` for more information.
                     \nHere's a list of all my commands:\n`,
 
       url: "https://github.com/skymunn/Mori-Summer-Discord/wiki",
@@ -49,18 +49,18 @@ exports.run = (client, message, args, tools) => {
                     inline: true
                 },
                 {
-                    name: "Anime",
-                    value: "`pixiv` `saucenao` `anime` `manga`",
-                    inline: true
-                },
-                {
-                    name: "Manga (R18)",
-                    value: "`nhentai`",
+                    name: "Memes",
+                    value: "`Coming Soon!`",
                     inline: true
                 },
                 {
                     name: "Manga",
-                    value: "`mangafox`",
+                    value: "`nhentai` `mangafox`",
+                    inline: true
+                },
+                {
+                    name: "Anime",
+                    value: "`pixiv` `saucenao` `anime` `manga`",
                     inline: true
                 },
                 {
@@ -118,12 +118,9 @@ exports.run = (client, message, args, tools) => {
                 description = "Get some fresh manga from MangaFox library.";
                 example = `Currently I have only two options for the first argument, which is 'popular' and 'new'. \nBy default I will output only the top 10 mangas, but you can specify the limit on second arg. \n\`${prefix}${arg} [options] [list limit] \``;
             } else if (arg === `nhentai`) {
-                description = "Searching doujin/manga from nHentai library. \nRelax, I've got permission from the server keeper. XD";
+                description = "Searching doujin/manga from nHentai library. \nYOU WILL NEED A NSFW CHANNEL TO EXECUTE THIS!";
                 example = `You can search for more than one genre. \n\`${prefix}${arg} [genre1] [genre2] [genre3] ....\``
-            } else if (arg === 'tsumino') {
-                description = "Searching doujin/manga from Tsumino library.";
-                example = `You can search for more than one genre. \n\`${prefix}${arg} [genre1] [genre2] [genre3] ....\``
-            }        
+            }       
 
         // rangka untuk dynamically help
         const embed = new Discord.RichEmbed({
@@ -133,7 +130,7 @@ exports.run = (client, message, args, tools) => {
             color: 15554891,
             footer: {
                 icon_url: "https://cdn.discordapp.com/avatars/451394160440770601/795d0d2e2e297a3aab3a3b3f9f994617.png",
-                text: "Powered by SeriousMunn"
+                text: "Mori Summer Project"
             },
             fields: [
                 {
