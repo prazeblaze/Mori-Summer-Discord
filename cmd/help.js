@@ -49,24 +49,19 @@ exports.run = (client, message, args, tools) => {
                     inline: true
                 },
                 {
-                    name: "Memes",
-                    value: "`Coming Soon!`",
+                    name: "Weebs Purposes",
+                    value: "`nhentai` `mangafox` `saucenao` `anime`",
                     inline: true
                 },
                 {
-                    name: "Manga",
-                    value: "`nhentai` `mangafox`",
-                    inline: true
-                },
-                {
-                    name: "Anime",
-                    value: "`pixiv` `saucenao` `anime` `manga`",
+                    name: "Fun",
+                    value: "`f` `hug`",
                     inline: true
                 },
                 {
                     name: "Some Links",
-                    value: "GitHub Repository | Discord Bot Library | Support Server",
-                    inline: true
+                    value: "[GitHub Repository](https://github.com/skymunn/Mori-Summer-Discord) | Discord Bot Library | Support Server",
+                    inline: false
                 }
             ]
         }).setTimestamp();
@@ -120,7 +115,19 @@ exports.run = (client, message, args, tools) => {
             } else if (arg === `nhentai`) {
                 description = "Searching doujin/manga from nHentai library. \nYOU WILL NEED A NSFW CHANNEL TO EXECUTE THIS!";
                 example = `You can search for more than one genre. \n\`${prefix}${arg} [genre1] [genre2] [genre3] ....\``
-            }       
+            } else if (arg === 'anime') {
+                description = "Searching anime in MAL Database."
+                example = `null`
+            }
+
+            // fun, but actually it's just a meem
+            else if (arg === 'f') {
+                description = "Give your friend some respect."
+                example = `\`${prefix}${arg}\` or \`${prefix}${arg} [mention]\``
+            } else if (arg === 'hug') {
+                description = "Hug your friend."
+                example = `\`${prefix}${arg} [mention]\``
+            }
 
         // rangka untuk dynamically help
         const embed = new Discord.RichEmbed({

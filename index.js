@@ -22,6 +22,7 @@ const inviteLog = logTimeStamp + invit;
 client.on('ready', () => {
     // Random status
     function randomStatus() {
+        let project = `Mori Summer Project`
         let helpStatus = prefix + 'help';
         let genreSatu = ' | loli';
         let genreDua = ' | vanilla';
@@ -29,7 +30,7 @@ client.on('ready', () => {
         let servers = ` | ${client.guilds.size}`;
         let users = client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString();
         let user = ` | ${users}`
-        let status = [helpStatus + genreSatu, helpStatus + genreDua, helpStatus + genreTiga, helpStatus + `${user} users`, helpStatus + `${servers} servers`]
+        let status = [project, helpStatus + genreSatu, helpStatus + genreDua, helpStatus + genreTiga, helpStatus + `${user} users`, helpStatus + `${servers} servers`]
         let rstatus = Math.floor(Math.random() * status.length);
         client.user.setActivity(status[rstatus], { type: 'WATCHING' });
     }; setInterval(randomStatus, 30000)
@@ -80,7 +81,15 @@ client.on('message', message => {
             let featureFile = require(`./nimeg/${cmd}.js`);
             featureFile.run(client, message, args, tools);            
         }
-        catch (e) { console.log(executeLog + `An error occured: ${e.message}`) }
+        catch (e) { 
+            try {
+                let funFile = require(`./fun/${cmd}.js`);
+                funFile.run(client, message, args, tools);
+            }
+            catch (e) {
+                console.log(executeLog + `An error occured: ${e.message}`) 
+            }
+        }
     } finally {
         console.log(executeLog + `${message.author.tag} execute command: ${cmd}`)
     }
