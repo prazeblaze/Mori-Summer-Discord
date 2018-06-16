@@ -17,7 +17,6 @@ const readyLog = logTimeStamp + botName;
 const executeLog = logTimeStamp + exeCom;
 const inviteLog = logTimeStamp + invit;
 
-
 // kondisi ketika bot rede
 client.on('ready', () => {
     // Random status
@@ -70,7 +69,6 @@ client.on('message', message => {
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return
 
-
     // Command Handler
     try {
         let commandFile = require(`./cmd/${cmd}.js`);
@@ -91,7 +89,7 @@ client.on('message', message => {
             }
         }
     } finally {
-        console.log(executeLog + `${message.author.tag} execute command: ${cmd}`)
+        console.log(executeLog + `${message.author.tag} execute command: ${cmd}`);
     }
 
 });

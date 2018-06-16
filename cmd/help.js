@@ -8,6 +8,7 @@ const Discord = require('discord.js');
 const { prefix } = require('../config.json');
 
 exports.run = (client, message, args, tools) => {
+
   // core help
   if (!args.length) {
     const embed = new Discord.RichEmbed({
@@ -55,7 +56,7 @@ exports.run = (client, message, args, tools) => {
                 },
                 {
                     name: "Fun",
-                    value: "`f` `hug`",
+                    value: "`f` `hug` `say` `sayd`",
                     inline: true
                 },
                 {
