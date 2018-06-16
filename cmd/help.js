@@ -56,7 +56,7 @@ exports.run = (client, message, args, tools) => {
                 },
                 {
                     name: "Fun",
-                    value: "`f` `hug` `say` `sayd`",
+                    value: "`8ball` `f` `hug` `rate` `say` `sayd`",
                     inline: true
                 },
                 {
@@ -117,22 +117,28 @@ exports.run = (client, message, args, tools) => {
                 description = "Searching doujin/manga from nHentai library. \nYOU WILL NEED A NSFW CHANNEL TO EXECUTE THIS!";
                 example = `You can search for more than one genre. \n\`${prefix}${arg} [genre1] [genre2] [genre3] ....\``
             } else if (arg === 'anime') {
-                description = "Searching anime in MAL Database."
+                description = "Searching anime in MAL Database.";
                 example = `null`
             }
 
             // fun, but actually it's just a meem
-            else if (arg === 'f') {
-                description = "Give your friend some respect."
+            else if (arg === '8ball') {
+                description = "Ask something to Magic 8-Ball. \nReference: https://en.wikipedia.org/wiki/Magic_8-Ball";
+                example = `\`${prefix}${arg} [your_hope]\``
+            } else if (arg === 'f') {
+                description = "Give your friend some respect.";
                 example = `\`${prefix}${arg}\` or \`${prefix}${arg} [mention]\``
             } else if (arg === 'hug') {
-                description = "Hug your friend."
+                description = "Hug your friend.";
                 example = `\`${prefix}${arg} [mention]\``
+            } else if (arg === 'rate') {
+                description = "Rate something.";
+                example = `\`${prefix}${arg} [that_you_wanna_rate]\``
             } else if (arg === 'say') {
-                description = "You can say something as bot, without deleting your command."
+                description = "You can say something as bot, without deleting your command.";
                 example = `\`${prefix}${arg} [caption]\``
             } else if (arg === 'sayd') {
-                description = "You can say something as bot and delete your history command. \nBut, you should give me \**Manage Message\** permission."
+                description = "You can say something as bot and delete your history command. \nBut, you should give me \**Manage Message\** permission.";
                 example = `\`${prefix}${arg} [caption]\``
             }
 
