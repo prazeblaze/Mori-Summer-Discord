@@ -66,7 +66,7 @@ exports.run = (client, message, args, tools) => {
                 }
             ]
         }).setTimestamp();
-        message.channel.send({ embed });
+        message.channel.send({ embed }).catch(err => message.channel.send("You lack the **Embed Links** permission!"));
 
         // dynamically help feature
     } else if (args.length) {
@@ -128,6 +128,12 @@ exports.run = (client, message, args, tools) => {
             } else if (arg === 'hug') {
                 description = "Hug your friend."
                 example = `\`${prefix}${arg} [mention]\``
+            } else if (arg === 'say') {
+                description = "You can say something as bot, without deleting your command."
+                example = `\`${prefix}${arg} [caption]\``
+            } else if (arg === 'sayd') {
+                description = "You can say something as bot and delete your history command. \nBut, you should give me \**Manage Message\** permission."
+                example = `\`${prefix}${arg} [caption]\``
             }
 
         // rangka untuk dynamically help
@@ -147,7 +153,7 @@ exports.run = (client, message, args, tools) => {
                 }
             ]
         }).setTimestamp();
-        message.channel.send({ embed });
+        message.channel.send({ embed }).catch(err => message.channel.send("You lack the **Embed Links** permission!"));
         }
     }
 }

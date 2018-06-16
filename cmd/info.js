@@ -48,5 +48,5 @@ exports.run = (client, message, args, tools) => {
         ]
     }).setTimestamp();
 
-    message.channel.send({ embed });
+    message.channel.send({ embed }).catch(err => message.channel.send("You lack the **Embed Links** permission!"));
 }

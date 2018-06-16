@@ -30,6 +30,6 @@ exports.run = (client, message, args, tools) => {
         image: { url: picture }
     });
 
-    message.channel.send({ embed });
+    message.channel.send({ embed }).catch(err => message.channel.send("You lack the **Embed Links** permission!"));
     
 }

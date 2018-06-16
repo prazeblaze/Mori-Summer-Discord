@@ -18,13 +18,11 @@ exports.run = (client, message, args, tools) => {
         title = `${author} give some respect to ${mention}.`
     }
 
-    try {
-        let embed = new Discord.RichEmbed({
-            title: `${title}`,
-            image: {url: randomImage[rImage]}
-        }).setTimestamp();     
-        message.channel.send({embed});   
-    } catch (e) {
-        process.on('unhandledRejection', console.error);
-    } 
+    let embed = new Discord.RichEmbed({
+        title: `${title}`,
+        image: {url: randomImage[rImage]},
+        footer: {text: author}
+    }).setTimestamp();     
+    message.channel.send({embed}).catch(err => message.channel.send("You lack the **Embed Links** permission!"));   
+
 }

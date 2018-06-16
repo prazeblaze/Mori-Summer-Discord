@@ -32,6 +32,6 @@ exports.run = (client, message, args, tools) => {
     .addField("Status", status[user.presence.status], true)
     .addField("Bot", user.bot ? `This is ROBOT` : `This is HUMAN`, true);
 
-    message.channel.send(uEmbed);
+    message.channel.send(uEmbed).catch(err => message.channel.send("You lack the **Embed Links** permission!"));
     
 }
